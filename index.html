@@ -21,10 +21,11 @@
     <!-- 自定义设置 -->
     <style>
         body {
-        .btn {
-            background-color: rgba(255, 255, 255, 0.5); /* 半透明的背景色 */
-            border-color: rgba(255, 255, 255, 0.5); /* 半透明的边框色 */
-            color: #fff; /* 文字颜色为白色 */
+            .btn {
+                background-color: rgba(255, 255, 255, 0.5); /* 半透明的背景色 */
+                border-color: rgba(255, 255, 255, 0.5); /* 半透明的边框色 */
+                color: #fff; /* 文字颜色为白色 */
+            }
         }
         
         .site-title, .site-title + p {
@@ -38,6 +39,24 @@
             justify-content: center;
             align-items: center;
         }
+
+        /* 隐藏视频 */
+        .kz-video video {
+            display: none;
+        }
+
+        /* 根据屏幕大小显示不同的视频 */
+        @media (min-width: 768px) {
+            .kz-video .desktop-video {
+                display: block;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .kz-video .mobile-video {
+                display: block;
+            }
+        }
     </style>
     <script>
         // 音乐设置...
@@ -47,7 +66,10 @@
 
 <body>
     <div class="kz-video">
-        <video src="./static/video/videoplayback.mp4" autoplay="autoplay" loop muted playsinline="" webkit-playsinline=""></video>
+        <!-- 桌面视频 -->
+        <video class="desktop-video" src="./static/video/videoplayback.mp4" autoplay="autoplay" loop muted playsinline="" webkit-playsinline=""></video>
+        <!-- 移动视频 -->
+        <video class="mobile-video" src="./static/video/videoplayback11.mp4" autoplay="autoplay" loop muted playsinline="" webkit-playsinline=""></video>
     </div>
     <div id="main" class="container">
         <div class="row my-card justify-content-center">
