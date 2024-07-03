@@ -21,11 +21,22 @@
     <!-- 自定义设置 -->
     <style>
         body {
-
         .btn {
             background-color: rgba(255, 255, 255, 0.5); /* 半透明的背景色 */
             border-color: rgba(255, 255, 255, 0.5); /* 半透明的边框色 */
             color: #fff; /* 文字颜色为白色 */
+        }
+        
+        .site-title, .site-title + p {
+            text-align: center; /* 水平居中 */
+        }
+
+        /* 如果需要垂直居中，可以使用flexbox */
+        .card {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
         }
     </style>
     <script>
