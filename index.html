@@ -1,131 +1,90 @@
 <!DOCTYPE html>
-<html lang="">
-
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!-- 浏览器标签上显示的网站标题 -->
-    <title>网页导航-By LMY</title>
-    <!-- 网站介绍 -->
-    <meta name="description" content="网页导航">
-    <!-- 网站关键字 -->
-    <meta name="keywords" content="风也温柔">
-    <!-- 浏览器标签上显示的图标 -->
-    <link rel="icon" type="image/ico" href="https://sdn.geekzu.org/avatar/4cc893d113dd74ceca73f9863f2c5446/">
-    <!-- 样式文件 -->
-    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/5.12.1/css/all.min.css">
-    <link rel="stylesheet" href="./static/style.css?v=1.2.0">
-    <link rel="stylesheet" href="./static/APlayer-1.10.1/dist/APlayer.min.css">
-
-    <!-- 自定义设置 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>網頁導航</title>
     <style>
-        body {
-            .btn {
-                background-color: rgba(255, 255, 255, 0.5); /* 半透明的背景色 */
-                border-color: rgba(255, 255, 255, 0.5); /* 半透明的边框色 */
-                color: #fff; /* 文字颜色为白色 */
-            }
+        body, html {
+            height: 100%;
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            overflow: hidden;
         }
-        
-        .site-title, .site-title + p {
-            text-align: center; /* 水平居中 */
-        }
-
-        /* 如果需要垂直居中，可以使用flexbox */
-        .card {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-        #main {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            position: relative;
-            z-index: 1;
-            text-align: center;
-        }
-        /* 隐藏视频 */
-        .kz-video video {
-            display: none;
+        .video-container {
+            position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
-            height: auto;
-            object-fit: cover; /* 保持视频比例并完全填充容器 */
+            height: 100%;
+            overflow: hidden;
+            z-index: -1;
         }
-
-        /* 根据屏幕大小显示不同的视频 */
-        @media (min-width: 768px) {
-            .kz-video .desktop-video {
-                display: block;
-            }
+        video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
-
-        @media (max-width: 767px) {
-            .kz-video .mobile-video {
-                display: block;
-            }
+        .content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: white;
+        }
+        .content div {
+            background: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            margin: 10px;
+            border-radius: 5px;
+        }
+        .content a {
+            color: white;
+            text-decoration: none;
+            font-size: 24px;
         }
     </style>
-    <script>
-        // 音乐设置...
-    </script>
-    <!-- end 自定义设置 -->
 </head>
-
 <body>
-    <div class="kz-video">
-        <!-- 桌面视频 -->
-        <video class="desktop-video" src="./static/video/videoplayback.mp4" autoplay="autoplay" loop muted playsinline="" webkit-playsinline=""></video>
-        <!-- 移动视频 -->
-        <video class="mobile-video" src="./static/video/mvideoplayback11.mp4" autoplay="autoplay" loop muted playsinline="" webkit-playsinline=""></video>
-    </div>
-    <div id="main" class="container d-flex justify-content-center align-items-center">
-        <div class="row my-card justify-content-center">
-            <div class="col-lg-8 card">
-                <!-- 大标题 -->
-                <h1 class="site-title">卿聽吾語</h1>
-                <!-- 标题下的一段话 -->
-                <p>
-                    在星辰浩瀚的夜空下，夢境與希望齊舞，心如清風般自在。
-                </p>
-                <div class="container-fluid">
-                    <div class="row">
-                        <!-- 导航按钮组 -->
-                        <div class="news-btn-more">
-                        <a target="_blank" href="https://pz.sp01.dns-dynamic.net/">節點轉換</a>
-                        </div>
-                        <div class="link-btn-1st">
-                        <a target="_blank" href="https://im.sp01.dns-dynamic.net/">圖床</a>
-                        </div>
-
-                        <!-- end 导航按钮组 -->
-                    </div>
-                </div>
-                <!-- aplayer inner -->
-                <div id="aplayer-inner" class="aplayer"></div>
-                <!-- end aplayer inner -->
-
-                <footer>
-                    <p>Copyright 2024</p>
-                </footer>
-            </div>
-        </div>
-
+    <div class="video-container">
+        <video autoplay muted loop id="background-video-desktop">
+            <source src="video/videoplayback.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <video autoplay muted loop id="background-video-mobile">
+            <source src="video/videoplayback11.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
     </div>
 
-    <!-- aplayer -->
-    <div id="aplayer-fixed" class="aplayer"></div>
-    <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
-    <script src="./static/APlayer-1.10.1/dist/APlayer.min.js"></script>
-    <script src="./static/Meting.min.js"></script>
-    <!-- end_aplayer -->
-    <script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
-    <script defer src="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/js/bootstrap.min.js"></script>
-    <script src="./static/layer-v3.5.1/layer/layer.js"></script>
+    <div class="content">
+        <h1>傾聽吾語</h1>
+        <p>在星辰浩瀚的夜空下，夢境與希望齊舞，心如清風般自在。</p>
+        <div><a href="https://pz.sp01.dns-dynamic.net/">節點轉換</a></div>
+        <div><a href="https://im.sp01.dns-dynamic.net/">Telegraph圖床</a></div>
+        <foot>Copyright © 2024</foot>
+    </div>
 
-    <script src="./static/main.js"></script>
+    <script>
+        const desktopVideo = document.getElementById('background-video-desktop');
+        const mobileVideo = document.getElementById('background-video-mobile');
 
+        function checkViewport() {
+            if (window.innerWidth <= 768) {  // 768px 作为手机端和桌面端的分界
+                desktopVideo.style.display = 'none';
+                mobileVideo.style.display = 'block';
+            } else {
+                desktopVideo.style.display = 'block';
+                mobileVideo.style.display = 'none';
+            }
+        }
+
+        window.addEventListener('resize', checkViewport);
+        window.addEventListener('load', checkViewport);
+    </script>
+</body>
 </html>
