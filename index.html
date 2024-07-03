@@ -27,17 +27,18 @@
                 color: #fff; /* 文字颜色为白色 */
             }
         }
-        
-        .site-title, .site-title + p {
+
+        .site-title,
+        .site-title + p {
             text-align: center; /* 水平居中 */
         }
 
-        /* 如果需要垂直居中，可以使用flexbox */
         .card {
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
+            text-align: center;
         }
 
         /* 隐藏视频 */
@@ -59,6 +60,36 @@
             .kz-video .mobile-video {
                 display: block;
             }
+        }
+
+        .kz-video {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .kz-video video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            min-width: 100%;
+            min-height: 100%;
+        }
+
+        #main {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            position: relative;
+            z-index: 1;
+            text-align: center;
+        }
+
+        .my-card {
+            max-width: 100%;
         }
     </style>
     <!-- end 自定义设置 -->
@@ -82,15 +113,14 @@
                     在星辰浩瀚的夜空下，夢境與希望齊舞，心如清風般自在。
                 </p>
                 <div class="container-fluid">
-                    <div class="row">
+                    <div class="row justify-content-center">
                         <!-- 导航按钮组 -->
                         <div class="news-btn-more">
-                        <a target="_blank" href="https://pz.sp01.dns-dynamic.net/">節點轉換</a>
+                            <a target="_blank" href="https://pz.sp01.dns-dynamic.net/">節點轉換</a>
                         </div>
                         <div class="link-btn-1st">
-                        <a target="_blank" href="https://im.sp01.dns-dynamic.net/">圖床</a>
+                            <a target="_blank" href="https://im.sp01.dns-dynamic.net/">圖床</a>
                         </div>
-
                         <!-- end 导航按钮组 -->
                     </div>
                 </div>
@@ -99,11 +129,10 @@
                 <!-- end aplayer inner -->
 
                 <footer>
-                    <p>Copyright 2024 - Now</p>
+                    <p>Copyright 2024</p>
                 </footer>
             </div>
         </div>
-
     </div>
 
     <!-- aplayer -->
@@ -115,7 +144,6 @@
     <script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
     <script defer src="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/js/bootstrap.min.js"></script>
     <script src="./static/layer-v3.5.1/layer/layer.js"></script>
-
     <script src="./static/main.js"></script>
 
 </html>
