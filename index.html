@@ -43,6 +43,9 @@
         /* 隐藏视频 */
         .kz-video video {
             display: none;
+            width: 100%;
+            height: auto;
+            object-fit: cover; /* 保持视频比例并完全填充容器 */
         }
 
         /* 根据屏幕大小显示不同的视频 */
@@ -58,18 +61,15 @@
             }
         }
     </style>
-    <script>
-        // 音乐设置...
-    </script>
     <!-- end 自定义设置 -->
 </head>
 
 <body>
     <div class="kz-video">
         <!-- 桌面视频 -->
-        <video class="desktop-video" src="./static/video/videoplayback.mp4" autoplay="autoplay" loop muted playsinline="" webkit-playsinline=""></video>
+        <video class="desktop-video" src="./static/video/desktop-video.mp4" autoplay="autoplay" loop muted playsinline="" webkit-playsinline=""></video>
         <!-- 移动视频 -->
-        <video class="mobile-video" src="./static/video/videoplayback11.mp4" autoplay="autoplay" loop muted playsinline="" webkit-playsinline=""></video>
+        <video class="mobile-video" src="./static/video/mobile-video.mp4" autoplay="autoplay" loop muted playsinline="" webkit-playsinline=""></video>
     </div>
     <div id="main" class="container">
         <div class="row my-card justify-content-center">
