@@ -99,79 +99,11 @@ strike {
     font-size: 24px;
 }
 
-.photo-bg {
-    /* background-image: url(assets/background.jpg); */
-    background-image: url(https://tva1.sinaimg.cn/large/0072Vf1pgy1foxk456b0fj31hc0u0dxu.jpg);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
 
 footer p {
     font-size: 12px;
 }
 
-#kaygb-blog-a,
-#kaygb-mail-a {
-    display: none;
-}
-
-@media (max-width: 1199px) {
-    body {
-        min-height: 600px;
-    }
-    h1 {
-        font-size: 24px;
-    }
-    h2,
-    .social .fa {
-        font-size: 20px;
-    }
-    h3 {
-        font-size: 16px;
-    }
-    h4,
-    p {
-        font-size: 14px;
-    }
-    .card {
-        padding: 50px 50px 0px;
-    }
-}
-
-@media (max-width: 1199px) {
-    .photo-bg {
-        min-height: calc(100vh - 500px);
-    }
-}
-
-@media(max-width:991px) {
-    .photo-bg {
-        background-position: top;
-        min-height: calc(90vh - 440px);
-    }
-}
-
-@media(max-width: 767px) {
-    .container {
-        position: relative;
-        top: 0;
-        transform: translateY(0);
-    }
-    .photo-bg {
-        height: 180px;
-    }
-    .card {
-        padding: 20px;
-    }
-    #kaygb-blog-a,
-    #kaygb-mail-a {
-        display: block;
-    }
-    #kaygb-blog,
-    #kaygb-mail {
-        display: none;
-    }
 }
 
 #frame {
